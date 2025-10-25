@@ -1,0 +1,74 @@
+join player center
+join fantome center
+fantome: H… hello. Where am I?
+[end_timeline]
+player: Hi there! Welcome to the XXX Inn, the place you find when you are lost. How can I help you?
+fantome: L… lost, you say? I can't quite remember where I was going. I… I think I was with someone. Did anyone come before me?
+player: Nope, first visitor of the day!
+- Where did you come from?
+	fantome: I'm not sure… Last thing I remember, I was haunting a nice pumpkin patch with a… a friend. And then…
+	- And then, where did you go?
+		fantome: I… I think I heard something in the forest nearby and wandered off. And now, I can't find my way back to the pumpkin patch…
+		player: Don't worry, honey, you'll remember in time! All you need is a bit of rest and a nice warm treat to jog your memory.
+		jump 2.1
+	- And where is your friend now?
+		fantome: My… ah, yes, my friend. She must have gone looking for me. She knows I always forget things now that I am… this way.
+		player: You mean… a ghost?
+		fantome: Oh, I don't like this word… B… but, yes. It's like I only have half my brain these days. She's so patient with me…
+		player: So you knew her before you were… this way?
+		fantome: Of course! It feels like I've known her forever. We always said we wouldn't let even death do us part.
+		player: A romantic, I see! Well, I'm sure she'll find you in no time. Might as well get comfortable while you're here!
+		jump 2.2
+- Who is this someone you were with?
+	fantome: My… well, my friend. She must have gone looking for me. She knows I always forget things now that I am… this way…
+	player: You mean… a ghost?
+	fantome: Oh, I don't like this word… B… but, yes. It's like I only have half my brain these days. She's so patient with me…
+	player: So you knew her before you were… this way?
+	fantome: Of course! It feels like I've known her forever. We always said we wouldn't let even death do us part.
+	player: A romantic, I see! Well, I'm sure she'll find you in no time. Might as well get comfortable while you're here!
+	jump 2.3
+label 2.1
+fantome: Are… are you sure I can stay?
+player: Of course, honey! As long as you want!
+fantome: It… it might be long indeed. She always finds me, but I fear I've floated a long way.
+player: She?
+fantome: My… my friend. She's so patient with me, you know. It's not easy living with a ghost.
+player: You don't stick around with people because it's easy, you do because they're worth it. As I'm sure you are.
+fantome: That's… that's what she tells me too.
+player: Well, you can trust her, can't you?\
+Here, while you wait. I've got just what you need.
+Pick two items for your visitor.
+[end_timeline]
+label 2.2
+fantome: It… it might be longer than you think. I fear I've floated a long way.
+player: Indeed. Can't say there are many pumpkin patches in these parts! But maybe a nice warm treat'll jog your memory.
+fantome: You… you think?
+player: For sure.\
+Here, while you wait. I've got just what you need.
+Pick two items for your visitor.
+[end_timeline]
+label 2.3
+fantome: It… it might be longer than you think. I fear I've floated a long way.
+player: A long way from where, if I might ask?
+fantome:  Th… this nice pumpkin patch I've been haunting lately.
+player: Can't say there are many pumpkin patches in these parts! But maybe a nice warm treat'll jog your memory. You could even save a piece for your friend.
+fantome: Y… you're right. After all, she always knows where I am, even when I don't.
+player: Sounds like a keeper.\
+Here, while you wait. I've got just what you need.
+Pick two items for your visitor.
+[end_timeline]
+label 0-correct
+fantome: I… I'm sorry, I don't think this is what I need.
+[end_timeline]
+label wrong-edible
+fantome: This book sounds lovely, but I… I'd like something else to eat with it.
+[end_timeline]
+label wrong-other
+fantome: The pie looks delicious, but I don't think this item will help me very much…
+[end_timeline]
+label 2nd-error
+fantome:  I… I don't think this will help. I'll try to find my way back. Thank you for your time, you were very kind!
+[end_timeline]
+label 2-correct
+fantome: Pumpkins and a love story… This is perfect. Thank you.
+[end_timeline]

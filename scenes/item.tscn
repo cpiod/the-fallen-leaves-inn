@@ -1,34 +1,34 @@
 [gd_scene load_steps=4 format=3 uid="uid://v804tdo216sh"]
 
 [ext_resource type="Script" uid="uid://daitftaohupoc" path="res://scripts/item.gd" id="1_4gq7n"]
-[ext_resource type="Texture2D" uid="uid://bbilbgvlkra4y" path="res://icon.svg" id="2_s8enn"]
+[ext_resource type="Texture2D" uid="uid://bx412tuf0jn6u" path="res://assets/System_Misc/SODA_Icon_System_Misc_Book.png" id="2_s8enn"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s8enn"]
-radius = 60.00833
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8enn"]
+size = Vector2(72, 76)
 
 [node name="Item" type="Node2D"]
 script = ExtResource("1_4gq7n")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_s8enn")
+region_rect = Rect2(0, 0, 60, 60)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_s8enn")
+shape = SubResource("RectangleShape2D_s8enn")
 
 [node name="Bulle" type="Label" parent="."]
 visible = false
-offset_left = 47.0
-offset_top = -97.0
-offset_right = 230.0
-offset_bottom = -14.0
-theme_override_font_sizes/font_size = 60
+offset_left = -84.0
+offset_top = 48.0
+offset_right = 99.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 15
 text = "test"
 horizontal_alignment = 1
-vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
