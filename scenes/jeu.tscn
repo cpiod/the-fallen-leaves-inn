@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3dgxwrqod4j0"]
+
+[ext_resource type="PackedScene" uid="uid://cuo6r0uqbtof3" path="res://scenes/auberge.tscn" id="1_b6da0"]
+[ext_resource type="PackedScene" uid="uid://fmkr5su15ykv" path="res://scenes/comptoir.tscn" id="2_mq4lt"]
+
+[node name="Jeu" type="Node2D"]
+
+[node name="AubergeControl" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 462.0
+offset_bottom = 649.0
+
+[node name="ZoneAuberge" parent="AubergeControl" instance=ExtResource("1_b6da0")]
+position = Vector2(326, 373.00003)
+scale = Vector2(2.915, 2.915)
+
+[node name="ComptoirControl" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 460.0
+offset_right = 1154.0
+offset_bottom = 648.0
+mouse_filter = 1
+
+[node name="ZoneComptoir" parent="ComptoirControl" instance=ExtResource("2_mq4lt")]
+position = Vector2(346, 304)

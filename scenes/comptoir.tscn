@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://fmkr5su15ykv"]
+
+[ext_resource type="Texture2D" uid="uid://bk8pa3fgoi8pa" path="res://assets/wood_texture_full_screen.png" id="1_aj0up"]
+[ext_resource type="Script" uid="uid://4rxwv6ry8aiy" path="res://scripts/comptoir.gd" id="1_t3jp2"]
+[ext_resource type="PackedScene" uid="uid://v804tdo216sh" path="res://scenes/item.tscn" id="3_7gurh"]
+[ext_resource type="Texture2D" uid="uid://c1lhxmocsh788" path="res://assets/64_minion_1_xxx.png" id="4_y5mec"]
+[ext_resource type="Texture2D" uid="uid://b6dyn4ckeu230" path="res://assets/17_minion_01_xxx.png" id="5_xgt6a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y5mec"]
+radius = 66.48308
+
+[node name="ZoneComptoir" type="Node2D"]
+script = ExtResource("1_t3jp2")
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="Comptoir" type="Sprite2D" parent="."]
+position = Vector2(2, 142.00002)
+scale = Vector2(2.798971, 2.8414633)
+texture = ExtResource("1_aj0up")
+region_enabled = true
+region_rect = Rect2(0, 56.721138, 256, 144.94226)
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Livre1" parent="Items" instance=ExtResource("3_7gurh")]
+position = Vector2(-218, 247)
+sprite = ExtResource("4_y5mec")
+title = "Livre1"
+desc = "Horreur"
+
+[node name="Livre2" parent="Items" instance=ExtResource("3_7gurh")]
+position = Vector2(216, 269)
+sprite = ExtResource("5_xgt6a")
+title = "Livre2"
+desc = "Romance"
+
+[node name="Dépose" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dépose"]
+position = Vector2(240, -160)
+shape = SubResource("CircleShape2D_y5mec")
