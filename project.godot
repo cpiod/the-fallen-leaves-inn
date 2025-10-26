@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="cozy"
+config/name="The Fallen Leaves Inn"
 run/main_scene="uid://b648c0fwec7ib"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -72,7 +72,7 @@ audio/channel_defaults={
 "audio_bus": "",
 "fade_length": 0.0,
 "loop": true,
-"volume": 0.0
+"volume": 6.0
 }
 }
 variables={

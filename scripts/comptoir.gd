@@ -81,7 +81,8 @@ func start_new_day():
 	#	for c in clients:
 	#		c.visible = false
 	#	client.visible = true
-		tween.tween_property(client, "position:x", -150, 1).set_delay(1.0)
+		tween.tween_callback($Cloche.play).set_delay(1.0)#.set_delay(0.5)
+		tween.tween_property(client, "position:x", -150, 1)
 		tween.tween_callback(start_dialog)#.set_delay(0.5)
 		for c in $Items.get_children():
 			if c.day == day:
@@ -190,6 +191,7 @@ func _on_texture_button_pressed() -> void:
 	var edible_correct = selected_food_item.title == client.wanted_food
 	var other_correct = selected_other_item.title == client.wanted_other
 	if edible_correct and other_correct:
+		$Validation.play()
 		satisfied[day] = true
 		nb_satisfied += 1
 		if day == 0: # fantome présent
@@ -198,14 +200,18 @@ func _on_texture_button_pressed() -> void:
 		$"Dépose/BoutonValider".disabled = true
 		start_dialog("2-correct")
 	elif tries == 1:
+		$Clic.play()
 		end = true
 		$"Dépose/BoutonValider".disabled = true
 		start_dialog("2nd-error")
 	elif !edible_correct and !other_correct:
+		$Clic.play()
 		start_dialog("0-correct")
 	elif edible_correct:
+		$Clic.play()
 		start_dialog("wrong-other")
 	elif other_correct:
+		$Clic.play()
 		start_dialog("wrong-edible")
 	tries += 1
 
@@ -221,3 +227,9 @@ func _on_timer_timeout() -> void:
 		$"../../EndScreen/1".visible = true
 	else:
 		$"../../EndScreen/2-4".visible = true
+
+
+func _on_area_2d_2_mouse_entered() -> void:
+	# ronronnement du chat
+	$Ronronnement.play()
+	pass # Replace with function body.

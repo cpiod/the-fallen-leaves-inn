@@ -1,29 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://blxqatmm7a6vw"]
+[gd_scene load_steps=6 format=3 uid="uid://blxqatmm7a6vw"]
 
 [ext_resource type="Texture2D" uid="uid://c3ltq1bcqc6w3" path="res://assets/photo/Photo_souvenir_base.png" id="1_g44xs"]
 [ext_resource type="Texture2D" uid="uid://bpkk10ivrtkv0" path="res://assets/photo/Fantome_sepia.png" id="2_vj8vg"]
 [ext_resource type="Texture2D" uid="uid://rhnvrftsf817" path="res://assets/photo/Cyclope_sepia.png" id="3_plosh"]
 [ext_resource type="Texture2D" uid="uid://c4ec6jgls0x1w" path="res://assets/photo/Loup_sepia.png" id="4_4j4el"]
 [ext_resource type="Texture2D" uid="uid://bg0nv3h0qgg24" path="res://assets/photo/Fee_sepia.png" id="5_wke0n"]
-
-[sub_resource type="FontFile" id="FontFile_g44xs"]
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_vj8vg"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
 
 [node name="EndScreen" type="Node2D"]
 
@@ -64,12 +45,11 @@ texture = ExtResource("5_wke0n")
 flip_h = true
 
 [node name="Label" type="Label" parent="Photo"]
-offset_left = -87.43396
-offset_top = 95.016106
-offset_right = 238.02713
-offset_bottom = 148.01611
+offset_left = -11.7612915
+offset_top = 99.7984
+offset_right = 313.6998
+offset_bottom = 152.7984
 theme_override_colors/font_color = Color(0.27892885, 0.19908792, 0.16061032, 1)
-theme_override_fonts/font = SubResource("FontFile_g44xs")
 theme_override_font_sizes/font_size = 30
 text = "It's closing time!"
 
@@ -80,7 +60,6 @@ offset_top = 478.0
 offset_right = 1149.0
 offset_bottom = 661.0
 theme_override_colors/font_color = Color(0.84705883, 0.7921569, 0.6862745, 1)
-theme_override_fonts/font = SubResource("FontFile_vj8vg")
 theme_override_font_sizes/font_size = 16
 text = "Another autumn night has fallen, after another day of welcoming the lost
 and helping them find a piece of what they're looking for.
@@ -97,7 +76,6 @@ offset_top = 478.0
 offset_right = 1149.0
 offset_bottom = 661.0
 theme_override_colors/font_color = Color(0.84705883, 0.7921569, 0.6862745, 1)
-theme_override_fonts/font = SubResource("FontFile_vj8vg")
 theme_override_font_sizes/font_size = 16
 text = "Another autumn night has fallen, after another day of welcoming the lost and helping them find a piece of what they're looking for.
 Not many have stayed tonight, but I trust the inn will be fuller tomorrow if I listen more closely to the stories my visitors have to tell.
@@ -112,11 +90,11 @@ offset_top = 478.0
 offset_right = 1149.0
 offset_bottom = 661.0
 theme_override_colors/font_color = Color(0.84705883, 0.7921569, 0.6862745, 1)
-theme_override_fonts/font = SubResource("FontFile_vj8vg")
 theme_override_font_sizes/font_size = 16
 text = "
 Another autumn night has fallen, after another day of welcoming the lost and helping them find a piece of what they're looking for.
-As I prepare to go to sleep in my now empty inn, I think to myself the place will be fuller tomorrow if I listen more closely to the stories my visitors have to tell.
+As I prepare to go to sleep in my now empty inn, I think to myself the place will be fuller tomorrow
+if I listen more closely to the stories my visitors have to tell.
 
 But for now: good night, traveller!"
 horizontal_alignment = 1

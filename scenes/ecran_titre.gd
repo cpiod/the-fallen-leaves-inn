@@ -21,3 +21,10 @@ func _process(delta: float) -> void:
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/jeu.tscn")
+
+
+func _on_credits_2_mouse_exited() -> void:
+	$NinePatchRect.visible = false
+
+func _on_credits_2_mouse_entered() -> void:
+	$NinePatchRect.visible = true

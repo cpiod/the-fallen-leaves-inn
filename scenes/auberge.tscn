@@ -496,7 +496,7 @@ tile_map_data = PackedByteArray("AAAAAPj/BwADAAwAAAD///j/BwACAAwAAAD9//j/BwADAA8
 tile_set = SubResource("TileSet_a1m3t")
 
 [node name="FurnitureTile" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAQABwAQAAYAAAD+/wQABwAXAAYAAAD+/wMABwAXAAYAAAD6//v/BwAVAAQAAAD6//z/BwAWAAkAAAABAP7/BwAWAAYAAAAAAAAABwATAAYAAAD///7/BwAWAAYAAAD8/wIABwAMAAkAAAD6/wQABwAVAAQAAAAAAAIABwAMAAYAAAD///r/BwANAAkAAAD6//n/BwAGAAwAAAA=")
+tile_map_data = PackedByteArray("AAAAAAQABwAQAAYAAAD+/wQABwAXAAYAAAD+/wMABwAXAAYAAAD6//v/BwAVAAQAAAD6//z/BwAWAAkAAAABAP7/BwAWAAYAAAAAAAAABwATAAYAAAD///7/BwAWAAYAAAD8/wIABwAMAAkAAAD6/wQABwAVAAQAAAAAAAIABwAMAAYAAAD6//n/BwAGAAwAAAD+//r/BwANAAkAAAAAAPv/BwAVAAQAAAA=")
 tile_set = SubResource("TileSet_a1m3t")
 
 [node name="PlafondTile" type="TileMapLayer" parent="."]
@@ -524,7 +524,7 @@ position = Vector2(-81, -82.999985)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_aiyc6")
 autoplay = "default"
-frame_progress = 0.67648005
+frame_progress = 0.77172667
 script = ExtResource("4_c388c")
 
 [node name="Tarte" type="Sprite2D" parent="Fantome"]
@@ -544,7 +544,7 @@ position = Vector2(-6.999999, -20)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_pddm4")
 autoplay = "default"
-frame_progress = 0.14890896
+frame_progress = 0.24412788
 
 [node name="Lute" type="Sprite2D" parent="Loup"]
 position = Vector2(3.749999, 3.7499995)
@@ -562,7 +562,7 @@ position = Vector2(-21, 60)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_8tpkw")
 autoplay = "default"
-frame_progress = 0.9311362
+frame_progress = 0.026355712
 
 [node name="Plume" type="Sprite2D" parent="Fée"]
 position = Vector2(31.25, 21.249996)
@@ -583,11 +583,11 @@ texture = ExtResource("10_pbxr8")
 
 [node name="Cyclope" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(-80.99999, 62)
+position = Vector2(15, -80)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_brame")
 autoplay = "default"
-frame_progress = 0.9271887
+frame_progress = 0.022408215
 flip_h = true
 
 [node name="Chocolat" type="Sprite2D" parent="Cyclope"]
@@ -600,7 +600,7 @@ position = Vector2(-56.374992, -93.15153)
 scale = Vector2(0.689394, 0.6893942)
 sprite_frames = SubResource("SpriteFrames_2rim1")
 autoplay = "default"
-frame_progress = 0.37688947
+frame_progress = 0.8533463
 
 [node name="Plante" type="Sprite2D" parent="."]
 position = Vector2(36, -88)

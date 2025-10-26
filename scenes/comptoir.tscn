@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://fmkr5su15ykv"]
+[gd_scene load_steps=75 format=4 uid="uid://fmkr5su15ykv"]
 
 [ext_resource type="Texture2D" uid="uid://bk8pa3fgoi8pa" path="res://assets/wood_texture_full_screen.png" id="1_aj0up"]
 [ext_resource type="Script" uid="uid://4rxwv6ry8aiy" path="res://scripts/comptoir.gd" id="1_t3jp2"]
@@ -30,6 +30,11 @@
 [ext_resource type="Texture2D" uid="uid://boq00mjuihm3v" path="res://assets/Adventure_Items/SODA_Icon_AdventureItems_MortarAndPestle_plant.png" id="22_fkrod"]
 [ext_resource type="PackedScene" uid="uid://ykt4i408ga2f" path="res://scenes/client.tscn" id="25_y6knp"]
 [ext_resource type="Texture2D" uid="uid://78pcp6vdfye4" path="res://assets/chat.png" id="30_b3qv7"]
+[ext_resource type="AudioStream" uid="uid://yj08mau7846a" path="res://assets/sfx/bouton.mp3" id="31_b3qv7"]
+[ext_resource type="AudioStream" uid="uid://3j0ef0b21aj6" path="res://assets/sfx/feu.mp3" id="31_gdann"]
+[ext_resource type="AudioStream" uid="uid://c5qur4n8j2b67" path="res://assets/sfx/validation.mp3" id="31_ogqqd"]
+[ext_resource type="AudioStream" uid="uid://cp0406idcacts" path="res://assets/sfx/ronron.mp3" id="31_ot8h4"]
+[ext_resource type="AudioStream" uid="uid://d1y0jtuvvn053" path="res://assets/sfx/shop-door-bell.mp3" id="31_viwu3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4aq3"]
 texture = ExtResource("4_ydl13")
@@ -596,6 +601,9 @@ size = Vector2(303, 211)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y4aq3"]
 size = Vector2(0, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdann"]
+size = Vector2(80, 84)
+
 [node name="ZoneComptoir" type="Node2D"]
 script = ExtResource("1_t3jp2")
 metadata/_edit_vertical_guides_ = [-527.0]
@@ -745,7 +753,7 @@ position = Vector2(-112, 16)
 sprite = ExtResource("10_y6knp")
 title = "Chocolate cake"
 desc = "Rich, gooey, decadent."
-day = 1
+day = 3
 
 [node name="Tarte pomme" parent="Items" instance=ExtResource("3_7gurh")]
 position = Vector2(-290, 102)
@@ -753,7 +761,7 @@ sprite = ExtResource("11_l4xx3")
 title = "Apple pie"
 desc = "Still warm from
 the oven."
-day = 3
+day = 1
 
 [node name="Cheesecake" parent="Items" instance=ExtResource("3_7gurh")]
 position = Vector2(-202, 102)
@@ -761,7 +769,7 @@ sprite = ExtResource("12_b6lf8")
 title = "Lemon & raspberry cheesecake"
 desc = "If you're feeling fancy
 – and still a bit summery."
-day = 4
+day = 3
 
 [node name="Pancakes" parent="Items" instance=ExtResource("3_7gurh")]
 position = Vector2(-201, 17)
@@ -831,25 +839,26 @@ desc = "If you're in a crafty
 mood (or have holes
 in your socks)."
 type = 1
-day = 3
+day = 2
 
 [node name="Potion" parent="Items" instance=ExtResource("3_7gurh")]
-position = Vector2(257, 193)
+position = Vector2(165, 195)
 sprite = ExtResource("21_ot8h4")
-title = "Unlabed potion"
+title = "Unlabeled potion"
 desc = "What could possibly
 go wrong?"
 type = 1
+day = 3
 
 [node name="Mortier" parent="Items" instance=ExtResource("3_7gurh")]
-position = Vector2(168, 193)
+position = Vector2(253, 195)
 sprite = ExtResource("22_fkrod")
 title = "Herbs, pestle and mortar"
 desc = "For all your witchy
 needs, or a nice
 cup of herbal tea."
 type = 1
-day = 4
+day = 2
 
 [node name="Chat" parent="Items" instance=ExtResource("3_7gurh")]
 z_index = 1
@@ -862,9 +871,37 @@ your drink off the table."
 type = 1
 day = -2
 
+[node name="Area2D2" type="Area2D" parent="Items/Chat"]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Chat/Area2D2"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gdann")
+
 [node name="TimerEnd" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
+[node name="Ronronnement" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-443, -121)
+stream = ExtResource("31_ot8h4")
+volume_db = 3.0
+
+[node name="Feu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_gdann")
+volume_db = 3.0
+autoplay = true
+parameters/looping = true
+
+[node name="Validation" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_ogqqd")
+
+[node name="Clic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_b3qv7")
+
+[node name="Cloche" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_viwu3")
+
 [connection signal="pressed" from="Dépose/BoutonValider" to="." method="_on_texture_button_pressed"]
+[connection signal="mouse_entered" from="Items/Chat/Area2D2" to="." method="_on_area_2d_2_mouse_entered"]
 [connection signal="timeout" from="TimerEnd" to="." method="_on_timer_timeout"]
