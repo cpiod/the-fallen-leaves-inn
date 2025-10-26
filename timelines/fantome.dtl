@@ -1,7 +1,7 @@
+[style name="style2"]
 join player center
 join fantome center
 fantome: H… hello. Where am I?
-[end_timeline]
 player: Hi there! Welcome to the XXX Inn, the place you find when you are lost. How can I help you?
 fantome: L… lost, you say? I can't quite remember where I was going. I… I think I was with someone. Did anyone come before me?
 player: Nope, first visitor of the day!
@@ -50,7 +50,7 @@ Pick two items for your visitor.
 label 2.3
 fantome: It… it might be longer than you think. I fear I've floated a long way.
 player: A long way from where, if I might ask?
-fantome:  Th… this nice pumpkin patch I've been haunting lately.
+fantome: Th… this nice pumpkin patch I've been haunting lately.
 player: Can't say there are many pumpkin patches in these parts! But maybe a nice warm treat'll jog your memory. You could even save a piece for your friend.
 fantome: Y… you're right. After all, she always knows where I am, even when I don't.
 player: Sounds like a keeper.\
@@ -67,7 +67,7 @@ label wrong-other
 fantome: The pie looks delicious, but I don't think this item will help me very much…
 [end_timeline]
 label 2nd-error
-fantome:  I… I don't think this will help. I'll try to find my way back. Thank you for your time, you were very kind!
+fantome: I… I don't think this will help. I'll try to find my way back. Thank you for your time, you were very kind!
 [end_timeline]
 label 2-correct
 fantome: Pumpkins and a love story… This is perfect. Thank you.

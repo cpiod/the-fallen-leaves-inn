@@ -22,14 +22,20 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"cyclope": "res://timelines/cyclope.dch",
 "fantome": "res://timelines/fantome.dch",
+"fée": "res://timelines/fée.dch",
+"loup": "res://timelines/loup.dch",
 "player": "res://timelines/player.dch"
 }
 directories/dtl_directory={
-"fantome": "res://timelines/fantome.dtl"
+"fantome": "res://timelines/fantome.dtl",
+"loup": "res://timelines/loup.dtl"
 }
-layout/style_directory={}
-layout/style_list=[""]
+layout/style_directory={
+"style2": "res://timelines/style2.tres"
+}
+layout/style_list=["res://timelines/style2.tres"]
 layout/default_style=""
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
@@ -66,6 +72,7 @@ audio/channel_defaults={
 }
 }
 variables={}
+text/autocolor_names=false
 
 [editor_plugins]
 

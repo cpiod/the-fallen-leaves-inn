@@ -1,0 +1,59 @@
+join player center
+join loup center
+loup: Aaah, finally a warm place and something to eat! I am starving!
+player: Hello there! Come on in! You are in the right place if you are hungry.
+loup: Brilliant! I have been lost for quite some time, you see, in this big, dark forest with nary a single tasty orphan in sight. Ha ha, just kidding!
+- I'm sorry, a single tasty what?
+	loup: Come on, don't take my jokes so seriously. I am retired from my old fairy tale job. I haven't devoured anyone in ages! I have found that I have more of a sweet fang, actually.
+	- What kind of job was that, exactly? Orphans aside, I mean.
+		loup: Little bit of this, little bit of that. Blowing a few houses down, dressing as a grandma from time to time… But I've got better things to do now.
+		player: Such as?
+		loup: Exploring the world, meeting new friends… Although nothing beats sleeping in and enjoying a nice breakfast at home! Would be doing it right now if I hadn't got lost.
+		jump 2.1
+	- That's a relief, I suppose. Any new career plans?
+		loup: Well, I'd like to bring joy to the world, for a change. Being a walking nightmare is not as fulfilling as you'd think.
+		player: Hard to believe.
+		loup: I know! That's why I have started dabbling in the arts. Theater, song… you name it. I like to call myself a modern day troubadour.
+		jump 2.2
+- … very funny. And how can I help you?
+	loup: Aah, come on, it was only a joke! I've been retired from my old fairy tale job for ages. I am just looking for a good time.
+	player: Lucky you, we've got all the time in the world here. How can I make it good?
+	loup: First of all, this place could be more lively. It's dreadfully quiet in here!
+	jump 2.3
+label 2.1
+player: You'll feel right at home here, then. And where will you be going next?
+loup: Where the road leads me! I'll just need to find my bearings. And maybe some like-minded entertainers to travel with.
+player: Starting up a band, are we?
+loup: Hopefully. A traveling troupe of sorts! After all the devouring, I only wish to bring joy to the world now.
+player: Sounds lovely. In the meantime, here's some joy for yourself!
+Pick two items for your visitor.
+[end_timeline]
+label 2.2
+player: A troubadour with an empty stomach; we don't want that!
+loup: Tell me about it! Hadn't I got lost, I would be eating breakfast in my bathrobe by the fireplace at this hour.
+player: I don't think we have bathrobes, but I can help with the rest…
+Pick two items for your visitor.
+[end_timeline]
+label 2.3
+player: An entertainer, are we?
+loup: The best in the land. Or at least I will be, once I've taken a few more lessons.
+player: Spreading art and beauty is an commendable goal. But not on an empty stomach!
+loup: Tell me about it! Hadn't I got lost, I would be eating breakfast in my bathrobe by the fireplace at this hour.
+player: I don't think we have bathrobes, but I can help with the rest…
+Pick two items for your visitor.
+[end_timeline]
+label 0-correct
+loup: No thank you, dear, I'm not really in the mood for these.
+[end_timeline]
+label wrong-edible
+loup: This lute is a beauty! But I am hungry for something else.
+[end_timeline]
+label wrong-other
+loup: These pancakes look glorious! But another item will complement them better…
+[end_timeline]
+label 2nd-error
+loup: Aah, don't worry about it, dear, I'll be on my way. Lovely chatting with you! See you around!
+[end_timeline]
+label 2-correct
+loup: Brilliant! Don't mind if I do! One, two; one, two, three…
+[end_timeline]

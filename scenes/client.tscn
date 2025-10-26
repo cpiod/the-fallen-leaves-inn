@@ -1,54 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ykt4i408ga2f"]
+[gd_scene load_steps=2 format=3 uid="uid://ykt4i408ga2f"]
 
 [ext_resource type="Script" uid="uid://wvxp6f3gohuy" path="res://scripts/client.gd" id="1_1t5vp"]
-[ext_resource type="Texture2D" uid="uid://pa26xhols21b" path="res://assets/monster_girls_spritesheet.png" id="1_5f806"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1t5vp"]
-atlas = ExtResource("1_5f806")
-region = Rect2(384, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4tr0r"]
-atlas = ExtResource("1_5f806")
-region = Rect2(416, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r26j7"]
-atlas = ExtResource("1_5f806")
-region = Rect2(384, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t0ykn"]
-atlas = ExtResource("1_5f806")
-region = Rect2(416, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_da3od"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1t5vp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4tr0r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r26j7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t0ykn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1t5vp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4tr0r")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
 
 [node name="Client" type="Node2D"]
 script = ExtResource("1_1t5vp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_da3od")
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 autoplay = "default"
-frame_progress = 0.21256575

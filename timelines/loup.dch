@@ -2,9 +2,9 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.5411765, 0.42352942, 0.49411765, 1),
+&"color": Color(0.39607844, 0.2901961, 0.23921569, 1),
 &"custom_info": {
-"prefix": "[color=8a6c7e]",
+"prefix": "[color=654a3d]",
 "sound_mood_default": "",
 "sound_moods": {},
 "style": "",
@@ -12,20 +12,10 @@
 },
 &"default_portrait": "",
 &"description": "",
-&"display_name": "Innkeeper",
+&"display_name": "Howy the Retired Fairy Tale Wolf",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {
-"": {
-"export_overrides": {
-"image": "\"\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-}
-},
+&"portraits": {},
 &"scale": 1.0
 }

@@ -12,42 +12,39 @@
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="10_it2yj"]
 [ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_uxg12"]
 
-[sub_resource type="Resource" id="Resource_kfqvd"]
+[sub_resource type="Resource" id="Resource_7yk45"]
 script = ExtResource("2_8hqww")
 scene = ExtResource("1_7yk45")
 
-[sub_resource type="Resource" id="Resource_5avmv"]
+[sub_resource type="Resource" id="Resource_8hqww"]
 script = ExtResource("2_8hqww")
 scene = ExtResource("3_40xc8")
 
-[sub_resource type="Resource" id="Resource_xoe1d"]
+[sub_resource type="Resource" id="Resource_40xc8"]
 script = ExtResource("2_8hqww")
 scene = ExtResource("4_74b48")
 
-[sub_resource type="Resource" id="Resource_2r2st"]
+[sub_resource type="Resource" id="Resource_74b48"]
 script = ExtResource("2_8hqww")
 scene = ExtResource("5_a0yoi")
 
-[sub_resource type="Resource" id="Resource_a4r4a"]
+[sub_resource type="Resource" id="Resource_a0yoi"]
 script = ExtResource("2_8hqww")
 scene = ExtResource("6_stub5")
-overrides = {
-"text_size": "20.0"
-}
 
-[sub_resource type="Resource" id="Resource_ukiql"]
+[sub_resource type="Resource" id="Resource_stub5"]
 script = ExtResource("2_8hqww")
 scene = ExtResource("7_tg76s")
 
-[sub_resource type="Resource" id="Resource_bavvn"]
+[sub_resource type="Resource" id="Resource_tg76s"]
 script = ExtResource("2_8hqww")
 scene = ExtResource("8_flgk2")
 
-[sub_resource type="Resource" id="Resource_cyqww"]
+[sub_resource type="Resource" id="Resource_flgk2"]
 script = ExtResource("2_8hqww")
 scene = ExtResource("9_sft1l")
 
-[sub_resource type="Resource" id="Resource_8cryl"]
+[sub_resource type="Resource" id="Resource_sft1l"]
 script = ExtResource("2_8hqww")
 scene = ExtResource("10_it2yj")
 
@@ -56,14 +53,13 @@ script = ExtResource("11_uxg12")
 name = "style"
 layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
 layer_info = {
-"": SubResource("Resource_kfqvd"),
-"10": SubResource("Resource_5avmv"),
-"11": SubResource("Resource_xoe1d"),
-"12": SubResource("Resource_2r2st"),
-"13": SubResource("Resource_a4r4a"),
-"14": SubResource("Resource_ukiql"),
-"15": SubResource("Resource_bavvn"),
-"16": SubResource("Resource_cyqww"),
-"17": SubResource("Resource_8cryl")
+"": SubResource("Resource_7yk45"),
+"10": SubResource("Resource_8hqww"),
+"11": SubResource("Resource_40xc8"),
+"12": SubResource("Resource_74b48"),
+"13": SubResource("Resource_a0yoi"),
+"14": SubResource("Resource_stub5"),
+"15": SubResource("Resource_tg76s"),
+"16": SubResource("Resource_flgk2"),
+"17": SubResource("Resource_sft1l")
 }
-metadata/_latest_layer = ""
