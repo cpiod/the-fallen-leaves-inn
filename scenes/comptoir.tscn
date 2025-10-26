@@ -1,19 +1,24 @@
-[gd_scene load_steps=75 format=4 uid="uid://fmkr5su15ykv"]
+[gd_scene load_steps=80 format=4 uid="uid://fmkr5su15ykv"]
 
 [ext_resource type="Texture2D" uid="uid://bk8pa3fgoi8pa" path="res://assets/wood_texture_full_screen.png" id="1_aj0up"]
 [ext_resource type="Script" uid="uid://4rxwv6ry8aiy" path="res://scripts/comptoir.gd" id="1_t3jp2"]
 [ext_resource type="PackedScene" uid="uid://v804tdo216sh" path="res://scenes/item.tscn" id="3_7gurh"]
+[ext_resource type="Texture2D" uid="uid://c28j0x84hybwm" path="res://assets/Sprite-0001.png" id="3_fkrod"]
+[ext_resource type="Texture2D" uid="uid://c1grev5cdl1js" path="res://assets/Sprite-0002.png" id="4_8amay"]
 [ext_resource type="Texture2D" uid="uid://cm45mul0ohhre" path="res://assets/Books_Paper/SODA_Icon_Books_Paper_Book1.png" id="4_xgt6a"]
 [ext_resource type="Texture2D" uid="uid://pa26xhols21b" path="res://assets/monster_girls_spritesheet.png" id="4_y4aq3"]
 [ext_resource type="Texture2D" uid="uid://cbw344mjubins" path="res://assets/t-040_transp.png" id="4_y6knp"]
 [ext_resource type="Texture2D" uid="uid://cwwccuet7trwv" path="res://assets/tiles_atlas.png" id="4_ydl13"]
+[ext_resource type="Texture2D" uid="uid://bkd8ck1q3n4al" path="res://assets/Sprite-0003.png" id="5_0i4xy"]
 [ext_resource type="Texture2D" uid="uid://bbwl5f6g1eynv" path="res://assets/ui-023.png" id="5_b6lf8"]
 [ext_resource type="Texture2D" uid="uid://d001l6l2w8q34" path="res://assets/t-290_transp.png" id="5_l4xx3"]
 [ext_resource type="Texture2D" uid="uid://co21g81mtrqk5" path="res://assets/t-078_transp.png" id="6_b6lf8"]
+[ext_resource type="Texture2D" uid="uid://bbjc6qqoa3q6m" path="res://assets/Sprite-0004.png" id="6_iwah6"]
 [ext_resource type="Texture2D" uid="uid://bjnvgfkva23ae" path="res://assets/ui-024.png" id="6_lyqy0"]
 [ext_resource type="Texture2D" uid="uid://dq3cffps5xo1w" path="res://assets/tapis_vert.png" id="6_viwu3"]
 [ext_resource type="Texture2D" uid="uid://cde6d25yfpfam" path="res://assets/tapis_rouge.png" id="7_b3qv7"]
 [ext_resource type="Texture2D" uid="uid://dbggrj8d0eo1" path="res://assets/t-080_transp.png" id="7_lyqy0"]
+[ext_resource type="Texture2D" uid="uid://baiad56fwuyi6" path="res://assets/Sprite-0005.png" id="7_x2ei0"]
 [ext_resource type="Texture2D" uid="uid://slxb7p8wsk0" path="res://assets/t-157_transp.png" id="8_ydl13"]
 [ext_resource type="Texture2D" uid="uid://cpa4fimma1ccm" path="res://assets/64_pumpkin_pie.png" id="9_tr6r8"]
 [ext_resource type="Texture2D" uid="uid://chc15paiikmr1" path="res://assets/31_chocolatecake_dish.png" id="10_y6knp"]
@@ -615,10 +620,39 @@ tile_map_data = PackedByteArray("AAD9//7/BwAZAA8AAAD+//7/BwAZAA8AAAD///7/BwAZAA8
 tile_set = SubResource("TileSet_viwu3")
 
 [node name="Background2" type="TileMapLayer" parent="."]
-position = Vector2(-62.999996, -100.999985)
+position = Vector2(-63, -80)
 scale = Vector2(10, 10)
 tile_map_data = PackedByteArray("AAABAP//BwAQAAYAAAA=")
 tile_set = SubResource("TileSet_viwu3")
+
+[node name="Horloge" type="Sprite2D" parent="."]
+position = Vector2(-35, -244.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("3_fkrod")
+
+[node name="Horloge2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-35, -244.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("4_8amay")
+
+[node name="Horloge3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-35, -244.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("5_0i4xy")
+
+[node name="Horloge4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-35, -244.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("6_iwah6")
+
+[node name="Horloge5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-35, -244.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("7_x2ei0")
 
 [node name="Fantome" parent="." instance=ExtResource("25_y6knp")]
 position = Vector2(-473, -149)
@@ -669,7 +703,7 @@ tile_set = SubResource("TileSet_viwu3")
 collision_layer = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dépose"]
-position = Vector2(176, -172)
+position = Vector2(176, -155)
 shape = SubResource("RectangleShape2D_y4aq3")
 
 [node name="FoodItemPos" type="Node2D" parent="Dépose"]

@@ -46,14 +46,17 @@ game: Pick two items for your visitor.
 label 0-correct
 [style name="style2"]
 loup: No thank you, dear, I'm not really in the mood for these.
+game: Pick again (one more try).
 [end_timeline]
 label wrong-edible
 [style name="style2"]
 loup: This lute is a beauty! But I am hungry for something else.
+game: Pick again (one more try).
 [end_timeline]
 label wrong-other
 [style name="style2"]
 loup: These pancakes look glorious! But another item will complement them better…
+game: Pick again (one more try).
 [end_timeline]
 label 2nd-error
 [style name="style2"]

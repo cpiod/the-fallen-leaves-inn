@@ -15,7 +15,7 @@ const COLLISION_MASK_DROP = 4
 
 var timer = Timer.new()
 
-var can_play = true
+var can_play = false
 var day: int = -2
 var tries: int
 var client: Node
@@ -66,6 +66,22 @@ func start_new_day():
 				$"../../EndScreen/Photo/Cyclope".visible = true
 			
 	day += 1
+	$Horloge.visible = false
+	$Horloge2.visible = false
+	$Horloge3.visible = false
+	$Horloge4.visible = false
+	$Horloge5.visible = false
+	if day < 0:
+		$Horloge.visible = true
+	elif day == 0:
+		$Horloge2.visible = true
+	elif day == 1:
+		$Horloge3.visible = true
+	elif day == 2:
+		$Horloge4.visible = true
+	elif day >= 3:
+		$Horloge5.visible = true
+		
 	if day == -1: # intro
 		Dialogic.timeline_ended.connect(_on_timeline_ended)
 		can_play = false
@@ -101,7 +117,8 @@ func start_new_day():
 
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
-	can_play = true
+	if client:
+		can_play = true
 	if end:
 		if client:
 			client.set_flip()

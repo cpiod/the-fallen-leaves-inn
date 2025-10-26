@@ -32,9 +32,10 @@ position = Vector2(507, 304)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_fgnw0")
-volume_db = -3.0
+volume_db = -6.0
 autoplay = true
 parameters/looping = true
 
 [node name="EndScreen" parent="." instance=ExtResource("4_g5o8c")]
 visible = false
+z_index = 3

@@ -76,9 +76,15 @@ audio/channel_defaults={
 }
 }
 variables={
-"fantome_present": false
+"fantome_present": false,
+"warn": false
 }
 text/autocolor_names=false
+
+[display]
+
+window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://coduejbscc1ex" path="res://assets/title_screen/Bouton_Credits_1.png" id="6_4cx8c"]
 [ext_resource type="Texture2D" uid="uid://bjylt6y1t5avm" path="res://assets/title_screen/Bouton_Credits_2.png" id="7_jgvs2"]
 [ext_resource type="Texture2D" uid="uid://rq20co4bwivf" path="res://assets/title_screen/Feuille_tombante.png" id="8_42crl"]
-[ext_resource type="Texture2D" uid="uid://cse4blr7h073o" path="res://assets/cadre.png" id="9_2i0no"]
+[ext_resource type="Texture2D" uid="uid://h0tto6wbhab2" path="res://assets/Credits.png" id="9_2i0no"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2i0no"]
 size = Vector2(144.5, 76.5)
@@ -61,51 +61,10 @@ position = Vector2(1042.544, 591)
 scale = Vector2(0.30400002, 0.304)
 texture = ExtResource("6_4cx8c")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="ImageCrédits" type="Sprite2D" parent="."]
 visible = false
-offset_left = 236.0
-offset_top = 21.0
-offset_right = 901.0
-offset_bottom = 612.0
+position = Vector2(560, 319)
 texture = ExtResource("9_2i0no")
-region_rect = Rect2(0, -1, 72, 74)
-patch_margin_left = 13
-patch_margin_top = 17
-patch_margin_right = 14
-patch_margin_bottom = 16
-
-[node name="Label" type="Label" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 98.0
-offset_top = 44.0
-offset_right = 562.0
-offset_bottom = 639.0
-theme_override_font_sizes/font_size = 12
-text = "This game was co-designed and co-created by Pierre-François Gimenez & Manon Le Gallo.
-Written by Manon Le Gallo.
-Programmed by Pierre-François Gimenez.
-
-Visual assets
-    Character sprites: ©Pop Shop Packs (https://pop-shop-packs.itch.io/)
-    Cozy room tilemap: ©rolff (https://rolff.itch.io/)
-    Wood texture (counter): ©Keruto (https://keruto.itch.io/)
-    Fireplace and tall potted plants: ©Ericks Azevedo (https://ericksazevedo.itch.io/)
-    Cat: ©Last tick (https://last-tick.itch.io/)
-    Medieval UI: ©ToffeeCraft (https://toffeecraft.itch.io/)
-    Drinks: ©Cecila Cecchet (https://cecixp.itch.io/)
-    Pastries: ©ghostpixxells (https://ghostpixxells.itch.io/)
-    All other client items: ©SODA (https://soda-1.itch.io/)
-    Title screen additional pixel art, clock pixel art: @Freepik
-    Vintage photo frame (end of game): ©PNGtree
-
-Music and sounds
-    Title screen music: ©Pixabay/Clavier Music
-    Main game music: ©Epidemic Sound/Arthur Benson
-    Other sounds: ©Pixabay/XXX, XXX, XXX, XXX and XXX
-
-Many thanks for your work!"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="mouse_entered" from="Credits2" to="." method="_on_credits_2_mouse_entered"]

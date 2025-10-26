@@ -24,7 +24,7 @@ func _on_start_pressed() -> void:
 
 
 func _on_credits_2_mouse_exited() -> void:
-	$NinePatchRect.visible = false
+	$ImageCrédits.visible = false
 
 func _on_credits_2_mouse_entered() -> void:
-	$NinePatchRect.visible = true
+	$ImageCrédits.visible = true

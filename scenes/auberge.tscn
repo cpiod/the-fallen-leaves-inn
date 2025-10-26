@@ -524,7 +524,7 @@ position = Vector2(-81, -82.999985)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_aiyc6")
 autoplay = "default"
-frame_progress = 0.77172667
+frame_progress = 0.50509024
 script = ExtResource("4_c388c")
 
 [node name="Tarte" type="Sprite2D" parent="Fantome"]
@@ -544,7 +544,7 @@ position = Vector2(-6.999999, -20)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_pddm4")
 autoplay = "default"
-frame_progress = 0.24412788
+frame_progress = 0.9774957
 
 [node name="Lute" type="Sprite2D" parent="Loup"]
 position = Vector2(3.749999, 3.7499995)
@@ -562,7 +562,7 @@ position = Vector2(-21, 60)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_8tpkw")
 autoplay = "default"
-frame_progress = 0.026355712
+frame_progress = 0.7597202
 
 [node name="Plume" type="Sprite2D" parent="Fée"]
 position = Vector2(31.25, 21.249996)
@@ -587,7 +587,7 @@ position = Vector2(15, -80)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_brame")
 autoplay = "default"
-frame_progress = 0.022408215
+frame_progress = 0.75577277
 flip_h = true
 
 [node name="Chocolat" type="Sprite2D" parent="Cyclope"]
@@ -600,7 +600,7 @@ position = Vector2(-56.374992, -93.15153)
 scale = Vector2(0.689394, 0.6893942)
 sprite_frames = SubResource("SpriteFrames_2rim1")
 autoplay = "default"
-frame_progress = 0.8533463
+frame_progress = 0.52003616
 
 [node name="Plante" type="Sprite2D" parent="."]
 position = Vector2(36, -88)

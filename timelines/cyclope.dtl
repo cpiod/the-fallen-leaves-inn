@@ -66,14 +66,17 @@ cyclope: I don't know. It's a bit embarrassing. I'm in the middle of a job, and 
 label 0-correct
 [style name="style2"]
 cyclope: Thanks, but this is not really what I had in mind.
+game: Pick again (one more try).
 [end_timeline]
 label wrong-edible
 [style name="style2"]
 cyclope: Oh my gods, what an adorable kitty! But I think I'd like a more comforting treat.
+game: Pick again (one more try).
 [end_timeline]
 label wrong-other
 [style name="style2"]
 cyclope: This drink looks divine. But I'm not sure about this item…
+game: Pick again (one more try).
 [end_timeline]
 label 2nd-error
 [style name="style2"]
