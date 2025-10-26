@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://v804tdo216sh"]
+[gd_scene load_steps=5 format=3 uid="uid://v804tdo216sh"]
 
 [ext_resource type="Script" uid="uid://daitftaohupoc" path="res://scripts/item.gd" id="1_4gq7n"]
 [ext_resource type="Texture2D" uid="uid://bx412tuf0jn6u" path="res://assets/System_Misc/SODA_Icon_System_Misc_Book.png" id="2_s8enn"]
+[ext_resource type="Texture2D" uid="uid://dfo2x0acwd8p7" path="res://assets/panneau.png" id="3_6muww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8enn"]
-size = Vector2(72, 76)
+size = Vector2(80, 84)
 
 [node name="Item" type="Node2D"]
 script = ExtResource("1_4gq7n")
@@ -18,18 +19,46 @@ region_rect = Rect2(0, 0, 60, 60)
 collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_s8enn")
 
-[node name="Bulle" type="Label" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 visible = false
-offset_left = -84.0
-offset_top = 48.0
-offset_right = 99.0
-offset_bottom = 131.0
-theme_override_font_sizes/font_size = 15
-text = "test"
+z_index = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -60.0
+offset_right = 15.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -5
+theme_override_constants/margin_top = -5
+theme_override_constants/margin_right = -5
+theme_override_constants/margin_bottom = -5
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("3_6muww")
+region_rect = Rect2(0, 0, 32, 29)
+patch_margin_left = 13
+patch_margin_top = 5
+patch_margin_right = 13
+patch_margin_bottom = 6
+
+[node name="Bulle" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.7921569, 0.6862745, 1)
+theme_override_font_sizes/font_size = 12
+text = "Herbs"
 horizontal_alignment = 1
-autowrap_mode = 2
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

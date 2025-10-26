@@ -2,17 +2,17 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.39607844, 0.2901961, 0.23921569, 1),
+&"color": Color(0.6901961, 0.4745098, 0.4745098, 1),
 &"custom_info": {
-"prefix": "[color=654a3d]",
+"prefix": "[b][color=9ba46a]",
 "sound_mood_default": "",
 "sound_moods": {},
 "style": "",
-"suffix": "[/color]"
+"suffix": "[/color][/b]"
 },
 &"default_portrait": "",
 &"description": "",
-&"display_name": "Polly the Flustered Cyclops",
+&"display_name": "",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),

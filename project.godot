@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="cozy"
-run/main_scene="uid://b3dgxwrqod4j0"
+run/main_scene="uid://b648c0fwec7ib"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -25,17 +25,21 @@ directories/dch_directory={
 "cyclope": "res://timelines/cyclope.dch",
 "fantome": "res://timelines/fantome.dch",
 "fée": "res://timelines/fée.dch",
+"game": "res://timelines/game.dch",
 "loup": "res://timelines/loup.dch",
 "player": "res://timelines/player.dch"
 }
 directories/dtl_directory={
+"cyclope": "res://timelines/cyclope.dtl",
 "fantome": "res://timelines/fantome.dtl",
+"fée": "res://timelines/fée.dtl",
+"intro": "res://timelines/intro.dtl",
 "loup": "res://timelines/loup.dtl"
 }
 layout/style_directory={
 "style2": "res://timelines/style2.tres"
 }
-layout/style_list=["res://timelines/style2.tres"]
+layout/style_list=["", "", "res://timelines/style2.tres"]
 layout/default_style=""
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
@@ -71,7 +75,9 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
-variables={}
+variables={
+"fantome_present": false
+}
 text/autocolor_names=false
 
 [editor_plugins]

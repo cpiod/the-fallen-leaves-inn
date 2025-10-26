@@ -13,8 +13,10 @@ var selected_other_item_initial_pos: Vector2
 const COLLISION_MASK_ITEM = 2
 const COLLISION_MASK_DROP = 4
 
+var timer = Timer.new()
+
 var can_play = true
-var day: int = -1
+var day: int = -2
 var tries: int
 var client: Node
 var end: bool = false
@@ -22,13 +24,16 @@ var end: bool = false
 # ordre des clients
 var clients: Array
 var satisfied: Array = [false, false, false, false]
+var nb_satisfied: int = 0
 
 func start_dialog(label: String = ""):
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	can_play = false
 	Dialogic.start(client.timeline, label)
+
 	
 func start_new_day():
+	$"Dépose/BoutonValider".disabled = true
 	var tween = get_tree().create_tween()
 	var tween_item = get_tree().create_tween().set_parallel()
 
@@ -42,36 +47,63 @@ func start_new_day():
 		tween_item.tween_property(selected_other_item, "position:y", selected_other_item_initial_pos.y, 1).set_trans(Tween.TRANS_SINE)
 #		selected_other_item.position = selected_other_item_initial_pos
 		selected_other_item = null
-	day += 1
+		
 	if client:
 		tween.tween_property(client, "position:x", -450, 1)
-#		tween.tween_property(client, "position:x", -450, 1) # wait a second
-	client = clients[day]
-#	for c in clients:
-#		c.visible = false
-#	client.visible = true
-	tween.tween_property(client, "position:x", -150, 1).set_delay(1.0)
-	tween.tween_callback(start_dialog)#.set_delay(0.5)
-	for c in $Items.get_children():
-		if c.day == day:
-			var old_pos = c.position
-			var distance = sqrt(c.position.x ** 2 + c.position.y ** 2)
-			c.position.x = c.position.x / distance * 500
-			c.position.y = c.position.y / distance * 500
-			tween_item.tween_property(c, "position:x", old_pos.x, 1).set_trans(Tween.TRANS_SINE)
-			tween_item.tween_property(c, "position:y", old_pos.y, 1).set_trans(Tween.TRANS_SINE)
-			c.visible = true
-		elif c.day > day:
+		
+		if satisfied[day]:
+			if day == 0:
+				$"../../AubergeControl/ZoneAuberge/Fantome".visible = true
+				$"../../EndScreen/Photo/Fantome".visible = true
+			elif day == 1:
+				$"../../AubergeControl/ZoneAuberge/Loup".visible = true
+				$"../../EndScreen/Photo/Loup".visible = true
+			elif day == 2:
+				$"../../AubergeControl/ZoneAuberge/Fée".visible = true
+				$"../../EndScreen/Photo/Fée".visible = true
+			elif day == 3:
+				$"../../AubergeControl/ZoneAuberge/Cyclope".visible = true
+				$"../../EndScreen/Photo/Cyclope".visible = true
+			
+	day += 1
+	if day == -1: # intro
+		Dialogic.timeline_ended.connect(_on_timeline_ended)
+		can_play = false
+		end = true
+		Dialogic.start("intro")
+		for c in $Items.get_children():
 			c.visible = false
-#		c.visible = c.day <= day
-	tries = 0
-#	start_dialog()
+		$Items/Chat.visible = true
+	elif day == 4:
+		$TimerEnd.start()
+	else:
+		client = clients[day]
+	#	for c in clients:
+	#		c.visible = false
+	#	client.visible = true
+		tween.tween_property(client, "position:x", -150, 1).set_delay(1.0)
+		tween.tween_callback(start_dialog)#.set_delay(0.5)
+		for c in $Items.get_children():
+			if c.day == day:
+				var old_pos = c.position
+				var distance = sqrt(c.position.x ** 2 + c.position.y ** 2)
+				c.position.x = c.position.x / distance * 500
+				c.position.y = c.position.y / distance * 500
+				tween_item.tween_property(c, "position:x", old_pos.x, 1).set_trans(Tween.TRANS_SINE)
+				tween_item.tween_property(c, "position:y", old_pos.y, 1).set_trans(Tween.TRANS_SINE)
+				c.visible = true
+			elif c.day > day:
+				c.visible = false
+	#		c.visible = c.day <= day
+		tries = 0
+	#	start_dialog()
 
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	can_play = true
 	if end:
-		client.set_flip()
+		if client:
+			client.set_flip()
 		start_new_day()
 		end = false
 
@@ -159,10 +191,15 @@ func _on_texture_button_pressed() -> void:
 	var other_correct = selected_other_item.title == client.wanted_other
 	if edible_correct and other_correct:
 		satisfied[day] = true
+		nb_satisfied += 1
+		if day == 0: # fantome présent
+			Dialogic.VAR.fantome_present = true
 		end = true
+		$"Dépose/BoutonValider".disabled = true
 		start_dialog("2-correct")
 	elif tries == 1:
 		end = true
+		$"Dépose/BoutonValider".disabled = true
 		start_dialog("2nd-error")
 	elif !edible_correct and !other_correct:
 		start_dialog("0-correct")
@@ -171,3 +208,16 @@ func _on_texture_button_pressed() -> void:
 	elif other_correct:
 		start_dialog("wrong-edible")
 	tries += 1
+
+
+func _on_timer_timeout() -> void:
+		# end of the game !
+	$"../../AubergeControl".visible = false
+	$"../../ComptoirControl".visible = false
+	$"../../EndScreen".visible = true
+	if nb_satisfied == 0:
+		$"../../EndScreen/0".visible = true
+	elif nb_satisfied == 1:
+		$"../../EndScreen/1".visible = true
+	else:
+		$"../../EndScreen/2-4".visible = true

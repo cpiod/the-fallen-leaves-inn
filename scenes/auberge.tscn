@@ -1,10 +1,19 @@
-[gd_scene load_steps=23 format=4 uid="uid://cuo6r0uqbtof3"]
+[gd_scene load_steps=42 format=4 uid="uid://cuo6r0uqbtof3"]
 
 [ext_resource type="Texture2D" uid="uid://cwwccuet7trwv" path="res://assets/tiles_atlas.png" id="1_3mnht"]
 [ext_resource type="Texture2D" uid="uid://bsp3x11g47dg3" path="res://assets/cat 2 (64х64).png" id="2_7r4ne"]
 [ext_resource type="Texture2D" uid="uid://pa26xhols21b" path="res://assets/monster_girls_spritesheet.png" id="3_a1m3t"]
+[ext_resource type="Script" uid="uid://w5ox8vavnu5d" path="res://scenes/client_auberge.gd" id="4_c388c"]
+[ext_resource type="Texture2D" uid="uid://cpa4fimma1ccm" path="res://assets/64_pumpkin_pie.png" id="4_rg70t"]
 [ext_resource type="Texture2D" uid="uid://bsmktk8t6ljq0" path="res://assets/kitchen assets/Fireplace/Fireplace-Sheet.png" id="4_xn5oa"]
+[ext_resource type="Texture2D" uid="uid://cm45mul0ohhre" path="res://assets/Books_Paper/SODA_Icon_Books_Paper_Book1.png" id="5_c388c"]
 [ext_resource type="Texture2D" uid="uid://3hm01cdxxxjm" path="res://assets/kitchen assets/Plant/Plant.png" id="5_ec2vh"]
+[ext_resource type="Texture2D" uid="uid://dpkocso02p3dy" path="res://assets/Instruments/SODA_Icon_Instruments_Lute.png" id="6_2rim1"]
+[ext_resource type="Texture2D" uid="uid://db82cfp0hgana" path="res://assets/80_pancakes_dish.png" id="7_2lq5b"]
+[ext_resource type="Texture2D" uid="uid://bvipiejhpukv1" path="res://assets/Materials/SODA_Icon_Materials_Feather.png" id="8_pddm4"]
+[ext_resource type="Texture2D" uid="uid://j0dkyuab02dq" path="res://assets/Books_Paper/SODA_Icon_Books_Paper_Scroll.png" id="9_17ngh"]
+[ext_resource type="Texture2D" uid="uid://slxb7p8wsk0" path="res://assets/t-157_transp.png" id="10_pbxr8"]
+[ext_resource type="Texture2D" uid="uid://dbggrj8d0eo1" path="res://assets/t-080_transp.png" id="11_8tpkw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ec2vh"]
 texture = ExtResource("1_3mnht")
@@ -328,6 +337,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c388c"]
+size = Vector2(38.983597, 31.590157)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qi1p"]
 atlas = ExtResource("3_a1m3t")
 region = Rect2(384, 0, 32, 32)
@@ -344,6 +356,72 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2wxjm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rim1"]
+atlas = ExtResource("3_a1m3t")
+region = Rect2(320, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lq5b"]
+atlas = ExtResource("3_a1m3t")
+region = Rect2(352, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pddm4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rim1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lq5b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17ngh"]
+atlas = ExtResource("3_a1m3t")
+region = Rect2(64, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbxr8"]
+atlas = ExtResource("3_a1m3t")
+region = Rect2(96, 416, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tpkw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17ngh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbxr8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4q8q"]
+atlas = ExtResource("3_a1m3t")
+region = Rect2(448, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htrok"]
+atlas = ExtResource("3_a1m3t")
+region = Rect2(480, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_brame"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4q8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htrok")
 }],
 "loop": true,
 "name": &"default",
@@ -426,32 +504,110 @@ tile_map_data = PackedByteArray("AAACAPj/BwAQAA8AAAACAPn/BwAQAA8AAAACAPr/BwAQAA8
 tile_set = SubResource("TileSet_a1m3t")
 
 [node name="Chat" type="AnimatedSprite2D" parent="."]
-position = Vector2(-55.999996, 18)
+visible = false
+position = Vector2(-93, 66)
 scale = Vector2(0.35742185, 0.35742185)
 sprite_frames = SubResource("SpriteFrames_8qi1p")
 autoplay = "default"
 frame_progress = 0.3527852
 
+[node name="Area2D" type="Area2D" parent="Chat"]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chat/Area2D"]
+position = Vector2(0.09289551, 0.99180603)
+shape = SubResource("RectangleShape2D_c388c")
+
 [node name="Fantome" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(-20.999996, 59.999996)
-scale = Vector2(0.6875, 0.6875)
+position = Vector2(-81, -82.999985)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_aiyc6")
 autoplay = "default"
+frame_progress = 0.67648005
+script = ExtResource("4_c388c")
+
+[node name="Tarte" type="Sprite2D" parent="Fantome"]
+position = Vector2(-3.75, 26.249977)
+scale = Vector2(0.33203152, 0.33203152)
+texture = ExtResource("4_rg70t")
+
+[node name="Livre" type="Sprite2D" parent="Fantome"]
+position = Vector2(-12.5, 32.499977)
+rotation = 2.2863812
+scale = Vector2(0.35156247, 0.35156247)
+texture = ExtResource("5_c388c")
+
+[node name="Loup" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-6.999999, -20)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_pddm4")
+autoplay = "default"
+frame_progress = 0.14890896
+
+[node name="Lute" type="Sprite2D" parent="Loup"]
+position = Vector2(3.749999, 3.7499995)
+scale = Vector2(0.39062497, 0.39062497)
+texture = ExtResource("6_2rim1")
+
+[node name="Pancakes" type="Sprite2D" parent="Loup"]
+position = Vector2(8.749998, 17.5)
+scale = Vector2(0.3046875, 0.3046875)
+texture = ExtResource("7_2lq5b")
+
+[node name="Fée" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-21, 60)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_8tpkw")
+autoplay = "default"
+frame_progress = 0.9311362
+
+[node name="Plume" type="Sprite2D" parent="Fée"]
+position = Vector2(31.25, 21.249996)
+rotation = 0.46949357
+scale = Vector2(0.22656256, 0.22656256)
+texture = ExtResource("8_pddm4")
+
+[node name="Livre" type="Sprite2D" parent="Fée"]
+position = Vector2(26.250002, 15.000002)
+rotation = 1.467822
+scale = Vector2(0.34375006, 0.34375006)
+texture = ExtResource("9_17ngh")
+
+[node name="Tasse" type="Sprite2D" parent="Fée"]
+position = Vector2(26.25, 6.249997)
+scale = Vector2(0.22656256, 0.22656256)
+texture = ExtResource("10_pbxr8")
+
+[node name="Cyclope" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-80.99999, 62)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_brame")
+autoplay = "default"
+frame_progress = 0.9271887
+flip_h = true
+
+[node name="Chocolat" type="Sprite2D" parent="Cyclope"]
+position = Vector2(8.7499895, 4.9999976)
+scale = Vector2(0.2695307, 0.26953092)
+texture = ExtResource("11_8tpkw")
 
 [node name="Cheminée" type="AnimatedSprite2D" parent="."]
 position = Vector2(-56.374992, -93.15153)
 scale = Vector2(0.689394, 0.6893942)
 sprite_frames = SubResource("SpriteFrames_2rim1")
 autoplay = "default"
-frame_progress = 0.78086805
+frame_progress = 0.37688947
 
 [node name="Plante" type="Sprite2D" parent="."]
 position = Vector2(36, -88)
 texture = ExtResource("5_ec2vh")
 
 [node name="Plante2" type="Sprite2D" parent="."]
-position = Vector2(-67, 61)
+position = Vector2(-67, 60)
 scale = Vector2(0.7222222, 0.7222222)
 texture = ExtResource("5_ec2vh")
 flip_h = true

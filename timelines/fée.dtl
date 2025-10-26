@@ -1,0 +1,73 @@
+[style name="style2"]
+join player center
+join fée center
+fée: … and then third branch to the left after the old oak tree. This shouldn't… oh, hi!
+player: Hi there! Welcome to the Fallen Leaves Inn!
+fée: Aaw, cruddlesticks! I've heard about this place… But I'm not lost, I'm not! I'm a forest fairy, I know my way around! I just need to find the overgrown orchard, cross the mossy pond, and then…
+- Don't fret, it's alright to get lost sometimes. Where were you trying to go?
+	fée: Why, to the Fae Folk Fall Festival, of course! There's tons of workshops this year, I can't miss it. And I'm NOT lost!
+	- Sounds fun! What kind of workshops?
+		fée: Well, all sorts, really. Pottery, poetry, gardening… But I'm more into the murder one myself. That's the one I've got my eye on.
+		player: Into the what now?
+		fée: Mysteries! Murder mysteries!! I'm an aspiring writer. A schemer, a plot-builder, a puzzle-maker, if you will.
+		player: And what will your next mystery be about?
+		jump 2.1
+	- Sure, sure. But if you were, what could help you find your way?
+		fée: Hypothetically… I would need to locate my great-grandma's old apple orchard. It's smothered in bushes and vines now, but you can still make out the shape of trees if you look close enough. How I miss this place…
+		player: Some fond memories there?
+		fée: The best. My siblings and I used to spend all summer in Great-Granny's garden before she passed through the Fairlands Gate. Picking apples, tricking humans, telling stories under the moonlight…
+		jump 2.2
+- You've… heard about this place?
+	fée: I mean, who hasn't? Among the fae folk, that is. We know all the quirks and spatiotemporal anomalies in this land. We caused most of them, after all.
+	player: Well, that's a first. While you're here, can I offer you something warm?
+	fée: Hmm, a drink would be nice after all this flying around. But I can't stay long, the festival will be starting soon.
+	jump 2.3
+label 2.1
+fée: The case of the Moonstone Murderer. A story I used to tell my siblings back in the day, when we were huddled up in my Great-Granny's apple orchard all summer long…
+player: I didn't know orchards inspired murder stories.
+fée: The smell of this garden could inspire anyone anything, really. I so miss this place now that she's gone… I need to finish this book, for her.
+player: And I'm sure she'll love it, wherever she is.
+fée: Thanks, love. With a warm drink and a bit of time, I could even work on my new chapter today…
+player: For sure. A little spark of inspiration, and you'll be good to go!
+game: Pick two items for your visitor.
+[end_timeline]
+label 2.2
+player: Sure sounds like a good time. Remember any of those stories?
+fée: Oh, I do. I've written down a bunch of them, actually! Turned them into murder mystery novels. That's my thing.
+player: Anything I could read?
+fée: I… I'm not exactly a published author yet. But I'll be soon enough! I'm working on a new book right now. With a warm drink and a bit of time, I think I could finish my next chapter today.
+player: For sure. One chapter at a time is how you get there!
+game: Pick two items for your visitor.
+[end_timeline]
+label 2.3
+player: What festival would that be?
+fée: Why, the Fae Folk Fall Festival, of course! There's tons of workshops this year, I can't miss it.
+player: Looking to learn new skills?
+fée: To perfect them, rather. I'm a murder mystery writer.
+player: Ooh, anything I could read?
+fée: I… I'm not exactly a published author yet. But I'll be soon enough! I've been telling stories since I was no bigger than a dandelion seed, huddled up with my siblings in my Great-Granny's apple orchard…
+player: I didn't know orchards inspired murder stories!
+fée: The smell of this garden could inspire anyone anything, really. I so miss this place now that she's gone… I need to finish this book, for her.
+player: I'm sure you will. A little spark of inspiration, and you'll be plotting your next chapter in no time!
+game: Pick two items for your visitor.
+[end_timeline]
+label 0-correct
+[style name="style2"]
+fée: Hmm, I'm not so sure about these.
+[end_timeline]
+label wrong-edible
+[style name="style2"]
+fée: A brand new quill, oh my! I'm not very hungry, though. I'd prefer something to drink.
+[end_timeline]
+label wrong-other
+[style name="style2"]
+fée: Ooh, this looks tasty! I'm not sure this item suits me, though.
+[end_timeline]
+label 2nd-error
+[style name="style2"]
+fée: Hmm, you know what, don't worry, I've got it. Overgrown orchard, mossy pond, mushroom circle, and then… I'll figure it out. Have a nice day, love!
+[end_timeline]
+label 2-correct
+[style name="style2"]
+fée: Thanks, you're a peach! I feel inspired already!
+[end_timeline]

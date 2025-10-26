@@ -1,0 +1,85 @@
+[style name="style2"]
+join cyclope center
+join player center
+cyclope: Erm, good evening. I'm sorry to bother you. I seem to have lost my way…
+player: You and me both, honey. Are you alright?
+cyclope: I don't know. It's a bit embarrassing. I'm in the middle of a job, and I have evidently made a mistake…
+- What kind of job?
+	cyclope: Well, that's the embarrassing part. I'm a mapmaker. I am charting this realm for the Ravenswood Academy.
+	player: A challenging one to chart, I'm guessing.
+	cyclope: You're not wrong. I was already feeling cold and tired, and a little bit discouraged. That's why I was easily distracted…
+	player: Something got in your way?
+	cyclope: Yes. This vampire lady was looking for her fiancée everywhere. I couldn't help her, but the whole thing made me feel so… lonely.
+	- Do you happen to know what this fiancée looks like?
+		cyclope: Well… she said "ghostly". I'm not sure what it means.
+		if {fantome_present} == true:
+			player: I think there's someone here you should talk to…
+			player: But before that, you deserve a break. I know a little someone who could keep you company.
+			game: Pick two items for your visitor.
+			[end_timeline]
+		else:
+			player: I think you just missed her… If you meet this vampire lady again, tell her Ginny was just here, and is looking for a pumpkin patch, would you?
+			cyclope: Oh, sure. I can probably find her, she's not far from here.
+			player: This is great news. But before that, you deserve a break. I know a little someone who could keep you company.
+			game: Pick two items for your visitor.
+			[end_timeline]
+	- Lonely? Why is that?
+		cyclope: She seemed so loving and worried about her fiancée. I've never had someone care about me this much in my life.
+		player: Really? Romantic love is not the only way to care about someone, you know.
+		cyclope: I know. I suppose my family does care for me. They've always been supportive, even when I moved across the realm for the Academy.
+		player: See? You're not as alone as you think!
+		cyclope: I'm not. I just feel like I need something more.
+		player: That's fair. You know what? I know a little someone who could keep you company.
+		game: Pick two items for your visitor.
+		[end_timeline]
+- What kind of mistake?
+	cyclope: A beginner mistake, I must admit. A wrong turn or a wrong measurement somewhere… That's never happened to me before.
+	player: A measurement? What were you doing, exactly?
+	cyclope: Oh, sorry. I should have said. I'm a mapmaker. I know, I know. Feel free to laugh…
+	player: Certainly not. We all make mistakes! You probably just need a break.
+	cyclope: I do. I am tired. And cold. And a bit demoralized. I could use a little pick-me-up.
+	player: Sure thing. You'll be all warm and cozy here!
+	cyclope: And lonely, as always…\
+	Sorry, I didn't mean to say this out loud. I've just been thinking about this strange encounter I've made today.
+	player: An encounter?
+	cyclope: I ran into this vampire lady looking for her fiancée everywhere. She seemed so worried. I've never had someone care about me this much in my life.
+	- Do you happen to know what this fiancée looks like?
+		cyclope: Well… she said "ghostly". I'm not sure what it means.
+		if {fantome_present} == true:
+			player: I think there's someone here you should talk to…
+			player: But before that, I know a little someone who could keep you company.
+			game: Pick two items for your visitor.
+			[end_timeline]
+		else:
+			player: I think you just missed her… If you meet this vampire lady again, tell her Ginny was just here, and is looking for a pumpkin patch, would you?
+			cyclope: Oh, sure. I can probably find her, she's not far from here.
+			player: This is great news. But before that, I know a little someone who could keep you company.
+			game: Pick two items for your visitor.
+			[end_timeline]
+	- Really? Romantic love is not the only way to care about someone, you know.
+		cyclope: I know. I suppose my family does care for me. They've always been supportive, even when I moved across the realm for the Academy.
+		player: See? You're not as alone as you think!
+		cyclope: I'm not. I just feel like I need something more.
+		player: That's fair. You know what? I know a little someone who could keep you company.
+		game: Pick two items for your visitor.
+		[end_timeline]
+label 0-correct
+[style name="style2"]
+cyclope: Thanks, but this is not really what I had in mind.
+[end_timeline]
+label wrong-edible
+[style name="style2"]
+cyclope: Oh my gods, what an adorable kitty! But I think I'd like a more comforting treat.
+[end_timeline]
+label wrong-other
+[style name="style2"]
+cyclope: This drink looks divine. But I'm not sure about this item…
+[end_timeline]
+label 2nd-error
+[style name="style2"]
+cyclope: On second thought, I should probably get going. I need to fix my mistake. Thank you so much for the chat!
+[end_timeline]
+label 2-correct
+[style name="style2"]
+cyclope: Hii, little kitten! You are so soft! And this smells so good… I already feel so much better!
+[end_timeline]

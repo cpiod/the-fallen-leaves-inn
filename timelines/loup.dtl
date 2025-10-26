@@ -1,3 +1,4 @@
+[style name="style2"]
 join player center
 join loup center
 loup: Aaah, finally a warm place and something to eat! I am starving!
@@ -26,13 +27,13 @@ loup: Where the road leads me! I'll just need to find my bearings. And maybe som
 player: Starting up a band, are we?
 loup: Hopefully. A traveling troupe of sorts! After all the devouring, I only wish to bring joy to the world now.
 player: Sounds lovely. In the meantime, here's some joy for yourself!
-Pick two items for your visitor.
+game: Pick two items for your visitor.
 [end_timeline]
 label 2.2
 player: A troubadour with an empty stomach; we don't want that!
 loup: Tell me about it! Hadn't I got lost, I would be eating breakfast in my bathrobe by the fireplace at this hour.
 player: I don't think we have bathrobes, but I can help with the rest…
-Pick two items for your visitor.
+game: Pick two items for your visitor.
 [end_timeline]
 label 2.3
 player: An entertainer, are we?
@@ -40,20 +41,25 @@ loup: The best in the land. Or at least I will be, once I've taken a few more le
 player: Spreading art and beauty is an commendable goal. But not on an empty stomach!
 loup: Tell me about it! Hadn't I got lost, I would be eating breakfast in my bathrobe by the fireplace at this hour.
 player: I don't think we have bathrobes, but I can help with the rest…
-Pick two items for your visitor.
+game: Pick two items for your visitor.
 [end_timeline]
 label 0-correct
+[style name="style2"]
 loup: No thank you, dear, I'm not really in the mood for these.
 [end_timeline]
 label wrong-edible
+[style name="style2"]
 loup: This lute is a beauty! But I am hungry for something else.
 [end_timeline]
 label wrong-other
+[style name="style2"]
 loup: These pancakes look glorious! But another item will complement them better…
 [end_timeline]
 label 2nd-error
+[style name="style2"]
 loup: Aah, don't worry about it, dear, I'll be on my way. Lovely chatting with you! See you around!
 [end_timeline]
 label 2-correct
-loup: Brilliant! Don't mind if I do! One, two; one, two, three…
+[style name="style2"]
+loup: Brilliant! Don't mind if I do! One, two; one, two, three, four…
 [end_timeline]

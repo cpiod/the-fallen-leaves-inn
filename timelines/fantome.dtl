@@ -1,8 +1,9 @@
 [style name="style2"]
-join player center
 join fantome center
+join player center
 fantome: H… hello. Where am I?
-player: Hi there! Welcome to the XXX Inn, the place you find when you are lost. How can I help you?
+[end_timeline]
+player: Hi there! Welcome to the Fallen Leaves Inn, the place you find when you are lost. How can I help you?
 fantome: L… lost, you say? I can't quite remember where I was going. I… I think I was with someone. Did anyone come before me?
 player: Nope, first visitor of the day!
 - Where did you come from?
@@ -37,7 +38,7 @@ player: You don't stick around with people because it's easy, you do because the
 fantome: That's… that's what she tells me too.
 player: Well, you can trust her, can't you?\
 Here, while you wait. I've got just what you need.
-Pick two items for your visitor.
+game: Pick two items for your visitor.
 [end_timeline]
 label 2.2
 fantome: It… it might be longer than you think. I fear I've floated a long way.
@@ -45,7 +46,7 @@ player: Indeed. Can't say there are many pumpkin patches in these parts! But may
 fantome: You… you think?
 player: For sure.\
 Here, while you wait. I've got just what you need.
-Pick two items for your visitor.
+game: Pick two items for your visitor.
 [end_timeline]
 label 2.3
 fantome: It… it might be longer than you think. I fear I've floated a long way.
@@ -55,20 +56,25 @@ player: Can't say there are many pumpkin patches in these parts! But maybe a nic
 fantome: Y… you're right. After all, she always knows where I am, even when I don't.
 player: Sounds like a keeper.\
 Here, while you wait. I've got just what you need.
-Pick two items for your visitor.
+game: Pick two items for your visitor.
 [end_timeline]
 label 0-correct
+[style name="style2"]
 fantome: I… I'm sorry, I don't think this is what I need.
 [end_timeline]
 label wrong-edible
+[style name="style2"]
 fantome: This book sounds lovely, but I… I'd like something else to eat with it.
 [end_timeline]
 label wrong-other
+[style name="style2"]
 fantome: The pie looks delicious, but I don't think this item will help me very much…
 [end_timeline]
 label 2nd-error
+[style name="style2"]
 fantome: I… I don't think this will help. I'll try to find my way back. Thank you for your time, you were very kind!
 [end_timeline]
 label 2-correct
+[style name="style2"]
 fantome: Pumpkins and a love story… This is perfect. Thank you.
 [end_timeline]

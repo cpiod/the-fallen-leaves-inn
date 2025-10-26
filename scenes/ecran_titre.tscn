@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://b648c0fwec7ib"]
+
+[ext_resource type="Script" uid="uid://b4cdlahavwtby" path="res://scenes/ecran_titre.gd" id="1_613bw"]
+[ext_resource type="AudioStream" uid="uid://vyfn5l26ab2w" path="res://assets/music/Musique menu cut.mp3" id="2_42crl"]
+[ext_resource type="Texture2D" uid="uid://d2pg8tfpj6ww4" path="res://assets/title_screen/Title_ScreenV2.png" id="3_2i0no"]
+[ext_resource type="Texture2D" uid="uid://dmtw1213hn5f7" path="res://assets/title_screen/Bouton_Start_1.png" id="4_8fg75"]
+[ext_resource type="Texture2D" uid="uid://eqstkb70aase" path="res://assets/title_screen/Bouton_Start_2.png" id="5_y5uk7"]
+[ext_resource type="Texture2D" uid="uid://coduejbscc1ex" path="res://assets/title_screen/Bouton_Credits_1.png" id="6_4cx8c"]
+[ext_resource type="Texture2D" uid="uid://bjylt6y1t5avm" path="res://assets/title_screen/Bouton_Credits_2.png" id="7_jgvs2"]
+[ext_resource type="Texture2D" uid="uid://rq20co4bwivf" path="res://assets/title_screen/Feuille_tombante.png" id="8_42crl"]
+
+[node name="ecran titre" type="Node2D"]
+script = ExtResource("1_613bw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_42crl")
+volume_db = 3.0
+autoplay = true
+parameters/looping = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("3_2i0no")
+
+[node name="Start" type="TextureButton" parent="."]
+offset_left = 350.0
+offset_top = 531.0
+offset_right = 847.0
+offset_bottom = 781.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("4_8fg75")
+texture_pressed = ExtResource("5_y5uk7")
+
+[node name="Credits" type="TextureButton" parent="."]
+offset_left = 612.0
+offset_top = 532.0
+offset_right = 1109.0
+offset_bottom = 782.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("6_4cx8c")
+texture_pressed = ExtResource("7_jgvs2")
+
+[node name="Feuille" type="Sprite2D" parent="."]
+position = Vector2(320.99997, -124.999985)
+scale = Vector2(0.7624999, 0.7624999)
+texture = ExtResource("8_42crl")
+offset = Vector2(50, 90)
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
