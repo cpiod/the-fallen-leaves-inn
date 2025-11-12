@@ -35,14 +35,15 @@ func start_dialog(label: String = ""):
 func start_new_day():
 	$"Dépose/BoutonValider".disabled = true
 	var tween = get_tree().create_tween()
-	var tween_item = get_tree().create_tween().set_parallel()
-
+	can_play = false
 	if selected_food_item:
+		var tween_item = get_tree().create_tween().set_parallel()
 		tween_item.tween_property(selected_food_item, "position:x", selected_food_item_initial_pos.x, 1).set_trans(Tween.TRANS_SINE)
 		tween_item.tween_property(selected_food_item, "position:y", selected_food_item_initial_pos.y, 1).set_trans(Tween.TRANS_SINE)
 #		selected_food_item.position = selected_food_item_initial_pos
 		selected_food_item = null
 	if selected_other_item:
+		var tween_item = get_tree().create_tween().set_parallel()
 		tween_item.tween_property(selected_other_item, "position:x", selected_other_item_initial_pos.x, 1).set_trans(Tween.TRANS_SINE)
 		tween_item.tween_property(selected_other_item, "position:y", selected_other_item_initial_pos.y, 1).set_trans(Tween.TRANS_SINE)
 #		selected_other_item.position = selected_other_item_initial_pos
@@ -102,6 +103,7 @@ func start_new_day():
 		tween.tween_callback(start_dialog)#.set_delay(0.5)
 		for c in $Items.get_children():
 			if c.day == day:
+				var tween_item = get_tree().create_tween().set_parallel()
 				var old_pos = c.position
 				var distance = sqrt(c.position.x ** 2 + c.position.y ** 2)
 				c.position.x = c.position.x / distance * 500
@@ -117,13 +119,13 @@ func start_new_day():
 
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
-	if client:
-		can_play = true
 	if end:
 		if client:
 			client.set_flip()
 		start_new_day()
 		end = false
+	elif client:
+		can_play = true
 
 func _process(_delta: float) -> void:
 	if selected_item:
@@ -139,7 +141,6 @@ func is_over_drop_zone() -> bool:
 	return space_state.intersect_point(parameters).size() > 0
 
 func _input(event):
-	var tween = get_tree().create_tween().set_parallel()
 	# left click
 	# only possible during player turn
 	if can_play and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -151,6 +152,7 @@ func _input(event):
 				selected_item = item
 				initial_item_pos = selected_item.position
 		elif selected_item: # released
+			var tween = get_tree().create_tween().set_parallel()
 			if is_over_drop_zone():
 				if selected_item.is_food():
 					# l’item n’a peut-être pas bougé de la zone de dépose
@@ -207,6 +209,7 @@ func _on_texture_button_pressed() -> void:
 	end = false
 	var edible_correct = selected_food_item.title == client.wanted_food
 	var other_correct = selected_other_item.title == client.wanted_other
+	Dialogic.VAR.two_more_tries = (tries == 0)
 	if edible_correct and other_correct:
 		$Validation.play()
 		satisfied[day] = true
@@ -216,7 +219,7 @@ func _on_texture_button_pressed() -> void:
 		end = true
 		$"Dépose/BoutonValider".disabled = true
 		start_dialog("2-correct")
-	elif tries == 1:
+	elif tries == 2:
 		$Clic.play()
 		end = true
 		$"Dépose/BoutonValider".disabled = true
@@ -249,4 +252,3 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_2_mouse_entered() -> void:
 	# ronronnement du chat
 	$Ronronnement.play()
-	pass # Replace with function body.

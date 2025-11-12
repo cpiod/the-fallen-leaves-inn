@@ -80,7 +80,7 @@ theme_override_font_sizes/font_size = 16
 text = "Another autumn night has fallen, after another day of welcoming the lost and helping them find a piece of what they're looking for.
 Not many have stayed tonight, but I trust the inn will be fuller tomorrow if I listen more closely to the stories my visitors have to tell.
 
-But for now: good night, traveller!"
+And for now: good night, traveller!"
 horizontal_alignment = 1
 
 [node name="0" type="Label" parent="."]
@@ -96,5 +96,5 @@ Another autumn night has fallen, after another day of welcoming the lost and hel
 As I prepare to go to sleep in my now empty inn, I think to myself the place will be fuller tomorrow
 if I listen more closely to the stories my visitors have to tell.
 
-But for now: good night, traveller!"
+And for now: good night, traveller!"
 horizontal_alignment = 1

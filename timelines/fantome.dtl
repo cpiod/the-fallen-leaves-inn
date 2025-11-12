@@ -34,7 +34,7 @@ fantome: It… it might be long indeed. She always finds me, but I fear I've flo
 player: She?
 fantome: My… my friend. She's so patient with me, you know. It's not easy living with a ghost.
 player: You don't stick around with people because it's easy, you do because they're worth it. As I'm sure you are.
-fantome: That's… that's what she tells me too.
+fantome: That's… that's what she tells me. I've always been a romantic too, b… but sometimes it's hard to trust myself.
 player: Well, you can trust her, can't you?\
 Here, while you wait. I've got just what you need.
 game: Pick two items for your visitor.
@@ -60,17 +60,17 @@ game: Pick two items for your visitor.
 label 0-correct
 [style name="style2"]
 fantome: I… I'm sorry, I don't think this is what I need.
-game: Pick again (one more try).
+jump try_again
 [end_timeline]
 label wrong-edible
 [style name="style2"]
-fantome: This book sounds lovely, but I… I'd like something else to eat with it.
-game: Pick again (one more try).
+fantome: This book will be lovely, but I… I'd like to eat something that reminds me of home more.
+jump try_again
 [end_timeline]
 label wrong-other
 [style name="style2"]
-fantome: The pie looks delicious, but I don't think this item will help me very much…
-game: Pick again (one more try).
+fantome: This pie looks delicious. But I think I'd like something more… romantic… to go with it while I wait for her.
+jump try_again
 [end_timeline]
 label 2nd-error
 [style name="style2"]
@@ -79,4 +79,10 @@ fantome: I… I don't think this will help. I'll try to find my way back. Thank 
 label 2-correct
 [style name="style2"]
 fantome: Pumpkins and a love story… This is perfect. Thank you.
+[end_timeline]
+label try_again
+if {two_more_tries} == true:
+	game: Pick again (two more tries).
+else:
+	game: Pick again (one more try).
 [end_timeline]

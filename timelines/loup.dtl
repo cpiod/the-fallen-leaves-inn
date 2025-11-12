@@ -14,7 +14,7 @@ loup: Brilliant! I have been lost for quite some time, you see, in this big, dar
 	- That's a relief, I suppose. Any new career plans?
 		loup: Well, I'd like to bring joy to the world, for a change. Being a walking nightmare is not as fulfilling as you'd think.
 		player: Hard to believe.
-		loup: I know! That's why I have started dabbling in the arts. Theater, song… you name it. I like to call myself a modern day troubadour.
+		loup: I know! That's why I have started dabbling in the arts. Song, dance… you name it. I like to call myself a modern day troubadour.
 		jump 2.2
 - … very funny. And how can I help you?
 	loup: Aah, come on, it was only a joke! I've been retired from my old fairy tale job for ages. I am just looking for a good time.
@@ -37,7 +37,7 @@ game: Pick two items for your visitor.
 [end_timeline]
 label 2.3
 player: An entertainer, are we?
-loup: The best in the land. Or at least I will be, once I've taken a few more lessons.
+loup: The best in the land. Or at least I will be, once I've taken a few more singing lessons.
 player: Spreading art and beauty is a commendable goal. But not on an empty stomach!
 loup: Tell me about it! Hadn't I got lost, I would be eating breakfast in my bathrobe by the fireplace at this hour.
 player: I don't think we have bathrobes, but I can help with the rest…
@@ -46,17 +46,17 @@ game: Pick two items for your visitor.
 label 0-correct
 [style name="style2"]
 loup: No thank you, dear, I'm not really in the mood for these.
-game: Pick again (one more try).
+jump try_again
 [end_timeline]
 label wrong-edible
 [style name="style2"]
-loup: This lute is a beauty! But I am hungry for something else.
-game: Pick again (one more try).
+loup: This lute is a beauty! But this is not my usual breakfast pick; I am hungry for something else!
+jump try_again
 [end_timeline]
 label wrong-other
 [style name="style2"]
-loup: These pancakes look glorious! But another item will complement them better…
-game: Pick again (one more try).
+loup: These pancakes look glorious! But this item sure won't help me entertain your visitors.
+jump try_again
 [end_timeline]
 label 2nd-error
 [style name="style2"]
@@ -65,4 +65,10 @@ loup: Aah, don't worry about it, dear, I'll be on my way. Lovely chatting with y
 label 2-correct
 [style name="style2"]
 loup: Brilliant! Don't mind if I do! One, two; one, two, three, four…
+[end_timeline]
+label try_again
+if {two_more_tries} == true:
+	game: Pick again (two more tries).
+else:
+	game: Pick again (one more try).
 [end_timeline]

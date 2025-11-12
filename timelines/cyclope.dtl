@@ -7,20 +7,20 @@ cyclope: I don't know. It's a bit embarrassing. I'm in the middle of a job, and 
 - What kind of job?
 	cyclope: Well, that's the embarrassing part. I'm a mapmaker. I am charting this realm for the Ravenswood Academy.
 	player: A challenging one to chart, I'm guessing.
-	cyclope: You're not wrong. I was already feeling cold and tired, and a little bit discouraged. That's why I was easily distracted…
+	cyclope: You're not wrong. After a while, I was cold and a bit discouraged. That's why I was easily distracted…
 	player: Something got in your way?
 	cyclope: Yes. This vampire lady was looking for her fiancée everywhere. I couldn't help her, but the whole thing made me feel so… lonely.
 	- Do you happen to know what this fiancée looks like?
 		cyclope: Well… she said "ghostly". I'm not sure what it means.
 		if {fantome_present} == true:
 			player: I think there's someone here you should talk to…
-			player: But before that, you deserve a break. I know a little someone who could keep you company.
+			player: But before that, you look like you could use a bit of warmth and comfort. I know a little someone who could keep you company.
 			game: Pick two items for your visitor.
 			[end_timeline]
 		else:
 			player: I think you just missed her… If you meet this vampire lady again, tell her Ginny was just here, and is looking for a pumpkin patch, would you?
 			cyclope: Oh, sure. I can probably find her, she's not far from here.
-			player: This is great news. But before that, you deserve a break. I know a little someone who could keep you company.
+			player: This is great news. But before that, you look like you could use a bit of warmth and comfort. I know a little someone who could keep you company.
 			game: Pick two items for your visitor.
 			[end_timeline]
 	- Lonely? Why is that?
@@ -28,7 +28,7 @@ cyclope: I don't know. It's a bit embarrassing. I'm in the middle of a job, and 
 		player: Really? Romantic love is not the only way to care about someone, you know.
 		cyclope: I know. I suppose my family does care for me. They've always been supportive, even when I moved across the realm for the Academy.
 		player: See? You're not as alone as you think!
-		cyclope: I'm not. I just feel like I need something more.
+		cyclope: I'm not. I just feel like I need something more. Sometimes you just long for the comfort of a warm hug.
 		player: That's fair. You know what? I know a little someone who could keep you company.
 		game: Pick two items for your visitor.
 		[end_timeline]
@@ -37,7 +37,7 @@ cyclope: I don't know. It's a bit embarrassing. I'm in the middle of a job, and 
 	player: A measurement? What were you doing, exactly?
 	cyclope: Oh, sorry. I should have said. I'm a mapmaker. I know, I know. Feel free to laugh…
 	player: Certainly not. We all make mistakes! You probably just need a break.
-	cyclope: I do. I am tired. And cold. And a bit demoralized. I could use a little pick-me-up.
+	cyclope: I do. I am tired. And cold. And a bit demoralized. I could use a bit of warmth and comfort right now.
 	player: Sure thing. You'll be all warm and cozy here!
 	cyclope: And lonely, as always…\
 	Sorry, I didn't mean to say this out loud. I've just been thinking about this strange encounter I've had today.
@@ -59,24 +59,24 @@ cyclope: I don't know. It's a bit embarrassing. I'm in the middle of a job, and 
 	- Really? Romantic love is not the only way to care about someone, you know.
 		cyclope: I know. I suppose my family does care for me. They've always been supportive, even when I moved across the realm for the Academy.
 		player: See? You're not as alone as you think!
-		cyclope: I'm not. I just feel like I need something more.
+		cyclope: I'm not. I just feel like I need something more. Sometimes you just long for the comfort of a warm hug.
 		player: That's fair. You know what? I know a little someone who could keep you company.
 		game: Pick two items for your visitor.
 		[end_timeline]
 label 0-correct
 [style name="style2"]
 cyclope: Thanks, but this is not really what I had in mind.
-game: Pick again (one more try).
+jump try_again
 [end_timeline]
 label wrong-edible
 [style name="style2"]
-cyclope: Oh my gods, what an adorable kitty! But I think I'd like a more comforting treat.
-game: Pick again (one more try).
+cyclope: Oh my gods, what an adorable kitty! But I think I'd like something more comforting to drink.
+jump try_again
 [end_timeline]
 label wrong-other
 [style name="style2"]
-cyclope: This drink looks divine. But I'm not sure about this item…
-game: Pick again (one more try).
+cyclope: This drink looks divine! But I'm not sure this item can really “keep me company”…
+jump try_again
 [end_timeline]
 label 2nd-error
 [style name="style2"]
@@ -85,4 +85,10 @@ cyclope: On second thought, I should probably get going. I need to fix my mistak
 label 2-correct
 [style name="style2"]
 cyclope: Hii, little kitten! You are so soft! And this smells so good… I already feel so much better!
+[end_timeline]
+label try_again
+if {two_more_tries} == true:
+	game: Pick again (two more tries).
+else:
+	game: Pick again (one more try).
 [end_timeline]

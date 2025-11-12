@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://cuo6r0uqbtof3"]
+[gd_scene load_steps=41 format=4 uid="uid://cuo6r0uqbtof3"]
 
 [ext_resource type="Texture2D" uid="uid://cwwccuet7trwv" path="res://assets/tiles_atlas.png" id="1_3mnht"]
 [ext_resource type="Texture2D" uid="uid://bsp3x11g47dg3" path="res://assets/cat 2 (64х64).png" id="2_7r4ne"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cpa4fimma1ccm" path="res://assets/64_pumpkin_pie.png" id="4_rg70t"]
 [ext_resource type="Texture2D" uid="uid://bsmktk8t6ljq0" path="res://assets/kitchen assets/Fireplace/Fireplace-Sheet.png" id="4_xn5oa"]
 [ext_resource type="Texture2D" uid="uid://cm45mul0ohhre" path="res://assets/Books_Paper/SODA_Icon_Books_Paper_Book1.png" id="5_c388c"]
-[ext_resource type="Texture2D" uid="uid://3hm01cdxxxjm" path="res://assets/kitchen assets/Plant/Plant.png" id="5_ec2vh"]
 [ext_resource type="Texture2D" uid="uid://dpkocso02p3dy" path="res://assets/Instruments/SODA_Icon_Instruments_Lute.png" id="6_2rim1"]
 [ext_resource type="Texture2D" uid="uid://db82cfp0hgana" path="res://assets/80_pancakes_dish.png" id="7_2lq5b"]
 [ext_resource type="Texture2D" uid="uid://bvipiejhpukv1" path="res://assets/Materials/SODA_Icon_Materials_Feather.png" id="8_pddm4"]
@@ -601,13 +600,3 @@ scale = Vector2(0.689394, 0.6893942)
 sprite_frames = SubResource("SpriteFrames_2rim1")
 autoplay = "default"
 frame_progress = 0.52003616
-
-[node name="Plante" type="Sprite2D" parent="."]
-position = Vector2(36, -88)
-texture = ExtResource("5_ec2vh")
-
-[node name="Plante2" type="Sprite2D" parent="."]
-position = Vector2(-67, 60)
-scale = Vector2(0.7222222, 0.7222222)
-texture = ExtResource("5_ec2vh")
-flip_h = true

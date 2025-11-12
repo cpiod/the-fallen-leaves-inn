@@ -742,8 +742,7 @@ position = Vector2(-287, 197)
 sprite = ExtResource("4_y6knp")
 title = "Earl Grey tea"
 desc = "A classic brew
-for chilly
-mornings."
+for chilly days."
 
 [node name="Café noir" parent="Items" instance=ExtResource("3_7gurh")]
 position = Vector2(-201, 289)
@@ -825,7 +824,7 @@ type = 1
 position = Vector2(252, 101)
 sprite = ExtResource("15_y4aq3")
 title = "The Strange Case of The
-Picture of Dr Dracula"
+Picture of Dr Poe"
 desc = "An all-time classic
 gothic story."
 type = 1
